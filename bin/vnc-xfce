@@ -1,0 +1,44 @@
+#! /bin/bash
+
+#############################
+#
+# Define some functions.
+#
+
+get_script_dir () {
+     SOURCE="${BASH_SOURCE[0]}"
+     # While $SOURCE is a symlink, resolve it
+     while [ -h "$SOURCE" ]; do
+          DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+          SOURCE="$( readlink "$SOURCE" )"
+          # If $SOURCE was a relative symlink (so no "/" as prefix, need to resolve it relative to the symlink base directory
+          [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+     done
+     DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+     echo "$DIR"
+}
+
+
+#############################
+#
+# Actual code
+#
+
+scriptdir=$(get_script_dir)
+
+# Get the arguments
+declare -a ARGS
+COUNT=$#
+for ((INDEX=0; INDEX<COUNT; ++INDEX))
+do
+    ARG="$(printf "%q" "$1")"
+    ARGS[INDEX]="$(printf "%q" "$ARG")"
+    shift
+done
+
+echo -e "\nThe VNC server will be killed automatically when you log out from the desktop." \
+"\nBut do make sure that you close the ssh tunnel that you set up to connect to the server!\n"
+
+
+XDG_CONFIG_HOME=${HOME}/.config/xfce-centos7 vncserver -autokill -xstartup $scriptdir/../vnc-config/xstartup.turbovnc.xfce ${ARGS[*]}
+
