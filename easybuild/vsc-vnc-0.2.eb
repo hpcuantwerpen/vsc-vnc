@@ -1,7 +1,7 @@
 easyblock = 'Tarball'
 
 name = 'vsc-vnc'
-version = '0.1'
+version = '0.2'
 
 homepage = 'https://github.com/hpcuantwerpen/vsc-vnc'
 whatis = [
@@ -17,9 +17,9 @@ Commands:
   manager/desktop (Xfce.org).
 """
 
-#docurls = [
-#    'Man pages for all commands in section 1, starting page: vsc-vnc',
-#]
+docurls = [
+    'Man pages for all commands in section 1, starting page: vsc-vnc',
+]
 
 upstream_contacts = [
     'New features? Contact hpc@uantwerpen.be',

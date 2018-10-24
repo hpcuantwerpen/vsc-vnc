@@ -1,0 +1,26 @@
+.\" Written by Kurt Lust, kurt.lust@uantwerpen.be.
+.TH man 1 "24 October 2018" "0.2" "vnc-xfce"
+.SH NAME
+vnc-xfce \-  Start a VNC server with the Xfce desktop/window manager environment
+.SH SYNOPSIS
+vnc-xfce [args for VNC server]
+.SH DESCRIPTION
+This command starts a VNC server with the Xfce desktop/window manager.
+The server is configured such that if you log out from the desktop, the server
+will be killed automatically. The arguments given to vnc-xfce are passed on to 
+the VNC server but preceded by options set by this command to start Xfce.
+
+.P
+At startup, the server may ask to create a password if one is not found. 
+It will also install some Xfce configuration files if these are not present
+already.
+.SH NOTES
+.IP \[bu] 2
+Forgot your password? Erase the file ~/.vnc/passwd and restart
+.IP \[bu]
+Xfce shows strange behaviour? You can start with a clean configuration by 
+removing the ~/.config/.xfce-centos7 directory.
+.SH SEE ALSO
+vsc-vnc(1)
+.SH AUTHOR
+Kurt Lust (Kurt.Lust@uantwerpen.be)
