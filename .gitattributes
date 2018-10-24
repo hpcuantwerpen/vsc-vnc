@@ -1,0 +1,3 @@
+# Exclude git files and other files starting with .
+.* export-ignore
+
