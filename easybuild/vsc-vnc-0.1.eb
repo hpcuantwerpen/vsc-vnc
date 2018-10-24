@@ -5,15 +5,16 @@ version = '0.1'
 
 homepage = 'https://github.com/hpcuantwerpen/vsc-vnc'
 whatis = [
-    'Description: vsc-vnc contains commands to make it easier to use VNC, including starting VNC with the xfce desktop',
+    'Description: vsc-vnc contains commands to make it easier to use VNC, including starting VNC with the Xfce desktop',
 ]
 
 description = """
-vsc-vnc was created to make starting VNC sessions easier on the clusters
-at UAntwerpen.
+vsc-vnc was created to make starting VNC sessions easier on the clusters at
+UAntwerpen.
 
 Commands:
-- vnc-xfce: Start the VNC server with the XFCE desktop environment. 
+* vnc-xfce : Start the VNC server with with Xfce as the window
+  manager/desktop (Xfce.org).
 """
 
 #docurls = [
