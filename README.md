@@ -1,3 +1,7 @@
+[GitHub site: https://github.com/hpcuantwerpen/vsc-vnc](https://github.com/hpcuantwerpen/vsc-vnc)
+
+# vsc-vnc
+
 This projects contains a number of files use on our clusters to ease the 
 use of VNC.
 
